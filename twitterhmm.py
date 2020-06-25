@@ -3,14 +3,12 @@ import wget
 import time
 import os
 import tweepy
-import os
-from os import environ
 
 def import_hmmm_posts():
 
     reddit = praw.Reddit(client_id='UNGy8Mu2f2Dbow', client_secret='oEsiIndElimXPZoi-Isp1Kq9E-8', user_agent='hmmm_bot_python')
 
-    hot_posts = reddit.subreddit('Hmmm').top("day", limit=10)
+    hot_posts = reddit.subreddit('Hmmm').top("day", limit=20)
     top_image = ""
 
     for post in hot_posts:
@@ -64,8 +62,8 @@ def file_len(fname):
 while True:
     top_image = import_hmmm_posts()
     tweet(top_image)
-    file_len("urls.txt")  # gets length of file, clears log if i >- x (CHANGE IN FUNCTION TO LIKE 400)
-    time.sleep(60*60*6)
+    file_len("urls.txt") 
+    time.sleep(60*60)
     try:
         os.remove(top_image)
     except:
