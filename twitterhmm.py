@@ -65,7 +65,7 @@ while True:
     top_image = import_hmmm_posts()
     tweet(top_image)
     file_len("urls.txt")  # gets length of file, clears log if i >- x (CHANGE IN FUNCTION TO LIKE 400)
-    time.sleep(60)
+    time.sleep(60*60*6)
     try:
         os.remove(top_image)
     except:
