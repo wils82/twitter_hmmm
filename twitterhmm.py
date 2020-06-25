@@ -35,7 +35,7 @@ def import_hmmm_posts():
 def tweet(filename):
     consumer_key = environ['CONSUMER_KEY']
     consumer_secret = environ['CONSUMER_SECRET']
-    access_token = environ['ACCESS_KEY']
+    access_token = environ['ACCESS_TOKEN']
     access_secret = environ['ACCESS_SECRET']
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
